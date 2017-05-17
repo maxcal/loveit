@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <header>
+      <%= render 'shared/devise_links' %>
+    </header>
+    <%= render 'shared/flash' if flash.any? %>
     <%= yield %>
   </body>
 </html>

@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'ffaker'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -42,9 +43,13 @@ RSpec.configure do |config|
     end
   end
 
+  config.include Warden::Test::Helpers
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+
   config.before(:suite) do
     FactoryGirl.lint
     DatabaseCleaner.clean_with(:truncation)
+    Warden.test_mode!
   end
 
   config.before(:each) do
@@ -66,5 +71,6 @@ RSpec.configure do |config|
 
   config.append_after(:each) do
     DatabaseCleaner.clean
+    Warden.test_reset!
   end
 end
