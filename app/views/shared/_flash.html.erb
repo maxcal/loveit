@@ -1,5 +1,5 @@
-<ul class="flashes">
+<div class="flashes">
   <% flash.each do |key, msg| %>
-    <%= content_tag :div, msg, class: "flash #{key}" %>
+    <%= content_tag :div, msg, class: "callout #{key}" %>
   <% end %>
-</ul>
+</div>

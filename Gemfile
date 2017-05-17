@@ -24,6 +24,10 @@ gem 'devise', '~> 4.3'
 gem 'pundit', '~> 1.1'
 # ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
 gem 'active_model_serializers', '~> 0.10.6'
+# Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
+gem 'simple_form', '~> 3.5'
+# The most advanced responsive front-end framework in the world.
+gem 'foundation-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
