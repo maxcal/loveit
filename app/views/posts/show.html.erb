@@ -1,0 +1,10 @@
+<%= render partial: 'post', object: @post %>
+
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><%= link_to 'Back', posts_path %></li>
+    <li>
+      <span class="show-for-sr">Current: </span> <%= @post.title %>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,12 @@
+<h1>New Post</h1>
+
+<%= render 'form', post: @post %>
+
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><%= link_to 'Back', posts_path %></li>
+    <li>
+      <span class="show-for-sr">Current: </span> Create a new post
+    </li>
+  </ul>
+</nav>

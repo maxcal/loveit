@@ -1,0 +1,11 @@
+<h1>Editing Post</h1>
+
+<%= render 'form', post: @post %>
+
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><%= link_to 'Back', posts_path %></li>
+    <li><%= link_to @post.title, @post %></li>
+    <li><span class="show-for-sr">Current: </span>Edit post</li>
+  </ul>
+</nav>

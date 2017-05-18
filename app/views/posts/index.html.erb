@@ -1,2 +1,19 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<div class="callout">
+  <h1>Posts</h1>
+</div>
+
+<%= render @posts %>
+
+<div class="button-group">
+  <%= link_to 'New Post', new_post_path, class: 'success button' %>
+</div>
+
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li>
+      <span class="show-for-sr">Current: </span> all posts
+    </li>
+  </ul>
+</nav>

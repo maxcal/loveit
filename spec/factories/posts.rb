@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-    body "MyText"
+    title { FFaker::CheesyLingo.title }
+    body { FFaker::CheesyLingo.sentence }
     author
   end
 end

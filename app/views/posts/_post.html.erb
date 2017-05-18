@@ -1,0 +1,13 @@
+<div class="post">
+  <h3><%= post.title %></h3>
+
+  <img class="thumbnail" src="https://placehold.it/850x350">
+  <div class="post-body">
+    <%= post.body %>
+  </div>
+
+  <div class="button-group">
+    <%= link_to_edit(post) %>
+    <%= link_to_destroy(post) %>
+  </div>
+</div>
