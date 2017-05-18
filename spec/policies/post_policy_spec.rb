@@ -20,7 +20,7 @@ RSpec.describe PostPolicy, type: :policy do
   end
 
   permissions :create? do
-    it "allows any user to be create posts" do
+    it "allows any user to create posts" do
       expect(subject).to permit(User.new)
     end
   end
@@ -29,7 +29,7 @@ RSpec.describe PostPolicy, type: :policy do
     it "does not allow any user to update posts" do
       expect(subject).to_not permit(User.new, Post.new)
     end
-    it "does not allow any user to update posts" do
+    it "allows authors to update posts" do
       post = Post.new(author: User.new)
       expect(subject).to permit(post.author, post)
     end
@@ -39,7 +39,7 @@ RSpec.describe PostPolicy, type: :policy do
     it "does not allow any user to destroy posts" do
       expect(subject).to_not permit(User.new, Post.new)
     end
-    it "does not allow any user to update posts" do
+    it "allows authors to destroy posts" do
       post = Post.new(author: User.new)
       expect(subject).to permit(post.author, post)
     end
